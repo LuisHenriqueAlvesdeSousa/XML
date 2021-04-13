@@ -1,0 +1,35 @@
+<!ELEMENT listado (futuro | divisa | bono | letra)*>
+                        
+                        <!ELEMENT futuro (producto, mercado, ciudad_procedencia)>
+                        <!ATTLIST futuro precio CDATA #REQUIRED>
+                                                <!ELEMENT producto(#PCDATA)>
+                                                <!ELEMENT mercado(#PCDATA)>
+                                                
+                        <!ELEMENT divisa (nombre_divisa, tipo_de_cambio+, ciudad_procedencia)>
+                        <!ATTLIST divisa precio CDATA #REQUIRED>
+                                              <!ELEMENT nombre_divisa(#PCDATA)>
+                                              <!ELEMENT tipo_de_cambio(#PCDATA)>
+                                              
+                        <!ELEMENT bono(pais_procedencia, valor_deseado, valor_minimo, valor_maximo, ciudad_procedencia)>
+                        <!ATTLIST bono precio CDATA #REQUIRED>
+                        <!ATTLIST bono estable CDATA #REQUIRED>
+                                              <!ELEMENT pais_procedencia CDATA #REQUIRED>
+                                              <!ELEMENT valor_deseado CDATA #REQUIRED>
+                                              <!ELEMENT valor_minimo CDATA #REQUIRED>
+                                              <!ELEMENT valor_maximo CDATA #REQUIRED>
+                                              
+                        <!ELEMENT letra (tipo_interes, pais_emisor, ciudad_procedencia>
+                        <!ATTLIST letra precio CDATA #REQUIRED>
+                                              <!ELEMENT tipo_interes (#PCDATA)>
+                                              
+                        <!ELEMENT ciudad_de_procedencia(frankfurt | madrid | nueva_york | tokio)>
+                                                <!ELEMENT frankfurt EMPTY>
+                                                <!ELEMENT madrid EMPTY>
+                                                <!ELEMENT nueva_york EMPTY>
+                                                <!ELEMENT tokio EMPTY>
+                                                
+                        <!ELEMENT pais_emisor (alemania | espania | eeuu | japon)>
+                                                <!ELEMENT alemania EMPTY>
+                                                <!ELEMENT espania EMPTY>
+                                                <!ELEMENT eeuu EMPTY>
+                                                <!ELEMENT japon EMPTY>
